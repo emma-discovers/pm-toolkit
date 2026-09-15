@@ -1,7 +1,6 @@
 # PM Toolkit
 
 A working collection of tools I use as a Product Manager.  
-Not a reading list, actual templates and frameworks you can copy and adapt.
 
 ## 📦 What's inside
 
