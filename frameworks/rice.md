@@ -19,7 +19,7 @@ A simple framework for deciding what to build first.
 
 ## When NOT to use it
 
-- Early discovery — you don't have data yet.
+- Early discovery (you don't have data yet).
 - Strategic bets where the metric isn't clear.
 - When everything scores the same (means your inputs are wrong).
 
