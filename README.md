@@ -29,4 +29,6 @@ Each file is short, practical, self-contained. You don't need to read them in or
 
 ## 💬 A note
 
+This list will keep growing. If you have a question, or want to receive or share other materials or templates, I'm always open and happy to connect.
+
 These are my personal working notes. Copy them, adapt them, or challenge them. I'd love to hear what works for you
