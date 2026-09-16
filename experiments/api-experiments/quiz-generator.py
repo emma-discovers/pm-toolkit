@@ -2,11 +2,12 @@
 Quiz Generator using Google Gemini API (Free Tier)
 ==================================================
 
-A simple script that generates quiz questions from a given topic or text
-using Google's free Gemini API.
+A simple script that generates quiz questions from a given topic using
+Google's free Gemini API.
 
 Setup:
-    1. Get a free API key at https://aistudio.google.com/apikey (no credit card needed).
+    1. Get a free API key at https://aistudio.google.com/apikey
+       (no credit card needed).
     2. Install the SDK: pip install google-genai
     3. Run: python quiz-generator.py --topic "Python loops" --num 3
 
@@ -15,6 +16,7 @@ Setup:
 import argparse
 import os
 from google import genai
+from google.genai import types
 
 
 def generate_quiz(topic: str, num_questions: int = 3) -> str:
@@ -23,7 +25,18 @@ def generate_quiz(topic: str, num_questions: int = 3) -> str:
     if not api_key:
         raise ValueError("Set GEMINI_API_KEY environment variable.")
 
-    client = genai.Client(api_key=api_key)
+    # Configure retry behavior to handle 429 (rate limit) automatically.
+    # The SDK will retry up to 3 times with exponential backoff.
+    client = genai.Client(
+        api_key=api_key,
+        http_options=types.HttpOptions(
+            retry_options=types.HttpRetryOptions(
+                attempts=3,
+                initial_delay=2.0,
+                http_status_codes=[408, 429, 500, 502, 503, 504],
+            )
+        ),
+    )
 
     prompt = f"""Generate {num_questions} multiple-choice quiz questions about: {topic}.
 
@@ -48,8 +61,11 @@ def main():
     parser.add_argument("--num", type=int, default=3, help="Number of questions")
     args = parser.parse_args()
 
-    result = generate_quiz(args.topic, args.num)
-    print(result)
+    try:
+        result = generate_quiz(args.topic, args.num)
+        print(result)
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 
 if __name__ == "__main__":
