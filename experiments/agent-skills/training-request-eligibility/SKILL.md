@@ -160,10 +160,6 @@ Return exactly one JSON object, no prose:
 | Codex | ✅ |
 | Gemini CLI | ✅ |
 
-## Related Skills
-
-- [content-migration-helper](../content-migration-helper/SKILL.md) — for migrating catalogue content between systems.
-- [training-report](../training-report/SKILL.md) — for reporting on completed trainings.
 
 ## Limitations
 
