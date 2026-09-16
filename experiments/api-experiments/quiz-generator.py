@@ -2,14 +2,12 @@
 Quiz Generator using Google Gemini API (Free Tier)
 ==================================================
 
-A simple script that generates quiz questions from a given topic using
-Google's free Gemini API.
+Generates quiz questions from a given topic using Google's free Gemini API.
 
 Setup:
-    1. Get a free API key at https://aistudio.google.com/apikey
-       (no credit card needed).
-    2. Install the SDK: pip install google-genai
-    3. Run: python quiz-generator.py --topic "Python loops" --num 3
+    1. Get a free API key at https://aistudio.google.com/apikey (no card needed).
+    2. pip install google-genai
+    3. python quiz-generator.py --topic "Python loops" --num 3
 
 """
 
@@ -20,20 +18,18 @@ from google.genai import types
 
 
 def generate_quiz(topic: str, num_questions: int = 3) -> str:
-    """Generate quiz questions using Gemini API."""
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         raise ValueError("Set GEMINI_API_KEY environment variable.")
 
-    # Configure retry behavior to handle 429 (rate limit) automatically.
-    # The SDK will retry up to 3 times with exponential backoff.
+    # Free tier has a low requests-per-minute limit, so retry 429s automatically.
     client = genai.Client(
         api_key=api_key,
         http_options=types.HttpOptions(
             retry_options=types.HttpRetryOptions(
                 attempts=3,
                 initial_delay=2.0,
-                http_status_codes=[408, 429, 500, 502, 503, 504],
+                http_status_codes=[429, 500, 502, 503, 504],
             )
         ),
     )
