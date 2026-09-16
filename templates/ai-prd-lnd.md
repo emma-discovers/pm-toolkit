@@ -72,7 +72,7 @@ Define what "good" means before building.
 - **Rollout ramp:** shadow → internal → canary → percentage → GA, with gates at each stage.[reference:11]
 
 ### 8. Risk tier (EU AI Act)
-Declare the risk tier upfront. In education and employment, the EU AI Act classifies certain applications as **high risk**, requiring conformity assessment, technical documentation, human oversight, and accuracy/robustness specifications.[reference:12]
+Declare the risk tier upfront. In education and employment, the EU AI Act classifies certain applications as **high risk**, requiring conformity assessment, technical documentation, human oversight, and accuracy/robustness specifications.
 - **Unacceptable risk:** banned.
 - **High risk:** regulated heavily (education scoring, employment).
 - **Limited risk:** transparency obligations (chatbots, AI-generated content disclosure).
