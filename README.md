@@ -10,6 +10,7 @@ A working collection of tools I use as a Product Manager.
 | **Templates** | PRD template with example | [templates/prd.md](templates/prd.md) |
 | **Checklists** | Launch checklist | [checklists/launch.md](checklists/launch.md) |
 | **Learning Ops** | LMS/LXP migration, vendor evaluation | [learning-ops/lms-migration-plan.md](learning-ops/lms-migration-plan.md) |
+| **Experiments** | My attempts at automating routine L&D tasks | [experiments/README.md](experiments/README.md) |
 
 ## 👋 New here? Start with these three
 
