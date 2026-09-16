@@ -29,6 +29,6 @@ Reads post-training survey responses from a CSV file and generates a Markdown re
 ## Limitations
 
 - **NPS is calculated on a 0–10 scale:** (promoters 9–10, detractors 0–6). CSAT is treated as a 1–5 scale. If your survey uses different scales, the formula needs to be adjusted.
-- **Open feedback analysis is keyword-based:**, not semantic. It counts frequent words after removing stop words. A production version could use sentiment analysis or topic modeling, but for a quick read, keyword frequency is often enough.
+- **Open feedback analysis is keyword-based:** not semantic. It counts frequent words after removing stop words. A production version could use sentiment analysis or topic modeling, but for a quick read, keyword frequency is often enough.
 
 *(More experiments will be added here as I go.)*
