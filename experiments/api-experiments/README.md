@@ -11,8 +11,4 @@ Generates quiz questions from a topic using Google Gemini's free API.
 - **Output:** [sample-output.md](sample-output.md)
 - **Run:** `python quiz-generator.py --topic "Python loops" --num 3`
 
-## Note on the free tier
-
-Gemini's free tier gives 50 requests per day. Enough for experiments and learning[reference:1].
-
 More experiments will be added over time.
