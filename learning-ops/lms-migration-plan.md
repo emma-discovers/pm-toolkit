@@ -254,11 +254,10 @@ The topic is important enough to deserve its own document, where I go into detai
 
 ## Conclusions
 
-**A migration is a data project, not a platform project:** The platform is the wrapper. Everything that determines success or failure sits inside it: clean records, intact audit trails, complete learning history. If the data is messy, no platform will save it.
-**Content is an iceberg:** The visible part is the license and the interface. The submerged part is re-authoring SCORM courses that don't migrate cleanly. That is what eats the budget and the timeline, and it is almost never planned for.
-**Compliance cannot be bolted on at the end:** Data residency, audit trails, and retention are architectural decisions, not settings. If legal and the DPO see the plan for the first time at cutover, the project is already at risk.
-**Parallel run is insurance, and it costs double:** Two systems, two licenses, one team. But the parallel run is what shows whether the reports reconcile before the old system is switched off. One full reporting cycle is the minimum, not a luxury.
-**The vendor quote is not the budget:** The license is roughly a third of the real cost. The rest is migration, integrations, compliance, and people. If the budget covers only the platform, it does not cover the project.
-**Staying put is also a decision, and it also has a price:** Remaining on a legacy system means continued license spend, manual workarounds, and fragmented data. Sometimes the migration pays for itself, but only if the cost of doing nothing is counted honestly.
-**If you cannot describe how to undo the migration, you are not ready to start it:** A rollback plan is not paranoia, it is what makes the project defensible to legal, audit, and compliance.
-
+- **A migration is a data project, not a platform project:** The platform is the wrapper. Everything that determines success or failure sits inside it: clean records, intact audit trails, complete learning history. If the data is messy, no platform will save it.
+- **Content is an iceberg:** The visible part is the license and the interface. The submerged part is re-authoring SCORM courses that don't migrate cleanly. That is what eats the budget and the timeline, and it is almost never planned for.
+- **Compliance cannot be bolted on at the end:** Data residency, audit trails, and retention are architectural decisions, not settings. If legal and the DPO see the plan for the first time at cutover, the project is already at risk.
+- **Parallel run is insurance, and it costs double:** Two systems, two licenses, one team. But the parallel run is what shows whether the reports reconcile before the old system is switched off. One full reporting cycle is the minimum, not a luxury.
+- **The vendor quote is not the budget:** The license is roughly a third of the real cost. The rest is migration, integrations, compliance, and people. If the budget covers only the platform, it does not cover the project.
+- **Staying put is also a decision, and it also has a price:** Remaining on a legacy system means continued license spend, manual workarounds, and fragmented data. Sometimes the migration pays for itself, but only if the cost of doing nothing is counted honestly.
+- **If you cannot describe how to undo the migration, you are not ready to start it:** A rollback plan is not paranoia, it is what makes the project defensible to legal, audit, and compliance.
