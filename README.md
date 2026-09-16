@@ -16,17 +16,11 @@ A working collection of tools I use as a Product Manager.
 
 If you're new to product management or just exploring this toolkit, don't try to read everything. Start with these:
 
-1. **[RICE Prioritization](frameworks/rice.md)** — how to decide what to build first.
-2. **[PRD Template](templates/prd.md)** — how to write a clear product spec.
-3. **[Launch Checklist](checklists/launch.md)** — what to check before shipping.
+1. **[RICE Prioritization](frameworks/rice.md)** — how to decide what to build first
+2. **[PRD Template](templates/prd.md)** — how to write a clear product spec
+3. **[Launch Checklist](checklists/launch.md)** — what to check before shipping
 
 Each file is short, practical, self-contained. You don't need to read them in order.
-
-## 🧭 How I use these
-
-- **RICE** — for backlog prioritization when there are more ideas than capacity
-- **PRD** — before any significant feature, to align engineering and design
-- **Launch Checklist** — before every release, to avoid the same mistakes twice
 
 ## 💬 A note
 
