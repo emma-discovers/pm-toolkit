@@ -1,0 +1,11 @@
+user_id,user_name,department,assessment_id,assessment_name,status,score,max_score,completed_at
+1,Anna,Engineering,101,Security Basics,completed,85,100,2026-09-01
+2,Ivan,Marketing,101,Security Basics,completed,72,100,2026-09-02
+3,Olga,Sales,101,Security Basics,failed,45,100,2026-09-02
+4,Petr,Engineering,101,Security Basics,completed,90,100,2026-09-03
+5,Maria,Sales,101,Security Basics,in_progress,,100,2026-09-03
+6,Sergey,Marketing,101,Security Basics,completed,68,100,2026-09-04
+7,Elena,Engineering,101,Security Basics,completed,95,100,2026-09-04
+8,Dmitry,Sales,101,Security Basics,completed,78,100,2026-09-05
+9,Alex,Marketing,101,Security Basics,failed,52,100,2026-09-05
+10,Kate,Engineering,101,Security Basics,completed,88,100,2026-09-06
