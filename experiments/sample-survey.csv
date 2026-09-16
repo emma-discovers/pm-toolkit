@@ -1,0 +1,11 @@
+user_id,department,nps_score,csat_score,open_feedback
+1,Engineering,9,5,"Great course, very practical"
+2,Marketing,7,4,"Could be shorter"
+3,Sales,10,5,"Loved the examples, very useful"
+4,Engineering,8,4,"Good content, but too long"
+5,Marketing,6,3,"Not relevant to my role"
+6,Sales,9,5,"Practical and well structured"
+7,Engineering,10,5,"Excellent examples and practical"
+8,Marketing,8,4,"Useful, could use more examples"
+9,Sales,7,4,"Good, but too long"
+10,Engineering,9,5,"Very practical and useful"
