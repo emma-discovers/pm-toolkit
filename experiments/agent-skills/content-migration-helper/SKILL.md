@@ -90,3 +90,147 @@ Return exactly one JSON object, no prose:
   "target_lms": "<lms name>",
   "notes": ["<optional caveats>"]
 }
+```
+
+## Rules
+
+- `status` is `ready` only when the target LMS natively supports the
+  standard and manifest integrity passes.
+- `status` is `needs_review` when the standard is supported via conversion
+  or the manifest has minor warnings.
+- `status` is `re_author` when the standard is unsupported or the manifest
+  is broken beyond repair.
+- If a package uses a standard not in the target LMS's supported list,
+  `status` is `re_author` regardless of manifest integrity.
+- Never recommend migration of AICC content without a re-authoring plan.
+- Do not modify content. Only audit and report.
+
+## Edge Cases
+
+- **Mixed-standard packages.** Some packages declare SCORM 2004 but contain
+  xAPI calls. Report both, and flag as `needs_review`.
+- **Missing manifest.** If `imsmanifest.xml` is absent or unparseable,
+  status is `re_author` with rationale "manifest missing or malformed."
+- **Absolute paths in manifest.** If resource paths are absolute URLs,
+  flag as `needs_review` — they may break behind a CDN.
+- **Duplicate item identifiers.** If two items share an identifier,
+  flag as `needs_review` — tracking may collide.
+- **Target LMS unknown.** If `lms_capability_check` returns no data,
+  return `needs_review` for all items with rationale "target LMS
+  capabilities could not be verified."
+- **Content behind authentication.** If the package references external
+  assets behind auth, flag as `needs_review`.
+
+## Example
+
+**Input:**
+- `content_source`: `/catalogue/engineering/`
+- `target_lms`: `docebo`
+- `migration_scope`: `full`
+
+**Inventory:**
+- 3 SCORM 1.2 packages
+- 1 SCORM 2004 package
+- 1 xAPI package
+
+**Target LMS check:**
+- SCORM 1.2: supported
+- SCORM 2004: supported
+- xAPI: supported via LRS integration
+- cmi5: supported
+
+**Output:**
+```json
+{
+  "summary": {
+    "total_items": 5,
+    "ready": 4,
+    "needs_review": 1,
+    "re_author": 0
+  },
+  "items": [
+    {
+      "content_id": "ENG-101",
+      "title": "Engineering Fundamentals",
+      "standard": "SCORM_1.2",
+      "status": "ready",
+      "tracking_risk": "medium",
+      "target_support": "native",
+      "rationale": "SCORM 1.2 is natively supported; completion and score will survive."
+    },
+    {
+      "content_id": "ENG-205",
+      "title": "Advanced Systems Design",
+      "standard": "xAPI",
+      "status": "needs_review",
+      "tracking_risk": "low",
+      "target_support": "via_conversion",
+      "rationale": "xAPI requires LRS integration; verify LRS endpoint before migration."
+    }
+  ],
+  "target_lms": "docebo",
+  "notes": ["SCORM 1.2 packages will lose interaction-level data during migration."]
+}
+```
+
+**Counter-example (re_author):**
+
+**Input:**
+- `content_source`: `/legacy/safety/`
+- `target_lms`: `docebo`
+- `migration_scope`: `full`
+
+**Inventory:**
+- 2 AICC packages
+
+**Target LMS check:**
+- AICC: unsupported
+
+**Output:**
+```json
+{
+  "summary": {
+    "total_items": 2,
+    "ready": 0,
+    "needs_review": 0,
+    "re_author": 2
+  },
+  "items": [
+    {
+      "content_id": "SAF-001",
+      "title": "Workplace Safety Basics",
+      "standard": "AICC",
+      "status": "re_author",
+      "tracking_risk": "high",
+      "target_support": "unsupported",
+      "rationale": "AICC is not supported by the target LMS; re-authoring in SCORM 2004 or xAPI is required."
+    }
+  ],
+  "target_lms": "docebo",
+  "notes": ["AICC content should be re-authored or retired, not migrated."]
+}
+```
+
+## Platform Compatibility
+
+| Platform | Supported |
+|----------|-----------|
+| Cursor | ✅ |
+| Claude Code | ✅ |
+| Codex | ✅ |
+| Gemini CLI | ✅ |
+
+## Related Skills
+
+- [training-request-eligibility](../training-request-eligibility/SKILL.md) — for checking eligibility before booking training.
+- [training-report](../training-report/SKILL.md) — for reporting on completed trainings.
+
+## Limitations
+
+- Assumes `content_inventory`, `manifest_parse`, and `lms_capability_check`
+  tools are available.
+- Does not validate runtime behaviour of packages — only structural integrity.
+- Does not handle DRM-protected content.
+- Tracking risk assessment is based on the standard, not on the actual
+  content implementation. A SCORM 1.2 package with no interaction data
+  may have lower risk than a poorly implemented SCORM 2004 package.
