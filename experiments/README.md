@@ -1,6 +1,6 @@
 # Experiments
 
-A place for things I'm testing, learning, and figuring out. I'm not a developer! These are my attempts at self-learning, working prototypes, and small scripts I use to automate routine L&D tasks. 
+A place for things I'm testing, learning, and figuring out. I'm not a developer. These are my attempts at self-learning, working prototypes, and small scripts I use to automate routine L&D tasks. 
 
 ## What's here
 ### assessment-report.py
