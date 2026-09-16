@@ -9,6 +9,7 @@ A working collection of tools I use as a Product Manager.
 | **Frameworks** | RICE prioritization | [frameworks/rice.md](frameworks/rice.md) |
 | **Templates** | PRD template with example | [templates/prd.md](templates/prd.md) |
 | **Checklists** | Launch checklist | [checklists/launch.md](checklists/launch.md) |
+| **Learning Ops** | LMS/LXP migration, vendor evaluation | [learning-ops/lms-migration-plan.md](learning-ops/lms-migration-plan.md) |
 
 ## 👋 New here? Start with these three
 
