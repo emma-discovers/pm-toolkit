@@ -131,4 +131,4 @@ The highest weighted score is not automatically the answer. Before committing:
 - **Run the compliance review before the demo.** It filters out 80% of vendors in the first week.
 - **Ask for the export format on day one.** If a vendor hesitates, that's the answer.
 - **Score the risk, not the feature list.** A vendor that does less but is honest about its limits is worth more than one that promises everything.
-- **Weight implementation services as part of the product.** The platform you buy is not the platform you get — the services team determines what actually works in month three.
+- **Weight implementation services as part of the product.** The platform you buy is not the platform you get, the services team determines what actually works in month three.
