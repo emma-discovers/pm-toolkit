@@ -165,4 +165,4 @@ Return exactly one JSON object, no prose:
 
 - Assumes `employee_get`, `employee_history`, and `catalogue_match` tools are available.
 - Duplicate detection is topic-based, not exact-title-based.
-- Does not handle budget approval — only eligibility.
+- Does not handle budget approval (only eligibility).
