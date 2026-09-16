@@ -12,7 +12,7 @@
 | Failed | 2 |
 | In progress | 1 |
 | Completion rate | 70.0% |
-| Average score | 82.6 |
+| Average score | 82.9 |
 | Pass rate | 77.8% |
 
 ## By department
