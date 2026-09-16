@@ -8,7 +8,7 @@
 | Metric | Value |
 |--------|-------|
 | Responses | 10 |
-| Average NPS | 30.0 |
+| Average NPS | 40.0 |
 | Average CSAT | 4.4 |
 
 ## Top words in feedback
@@ -23,7 +23,7 @@
 
 | Department | Responses | Avg NPS | Avg CSAT |
 |------------|-----------|---------|----------|
-| Engineering | 4 | 50.0 | 4.75 |
+| Engineering | 4 | 75.0 | 4.75 |
 | Marketing | 3 | -33.3 | 3.67 |
 | Sales | 3 | 66.7 | 4.67 |
 
