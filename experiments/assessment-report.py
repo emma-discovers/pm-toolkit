@@ -17,7 +17,6 @@ Input CSV format:
     2,Ivan,Marketing,101,Security Basics,completed,72,100,2026-09-02
     3,Olga,Sales,101,Security Basics,failed,45,100,2026-09-02
 
-Author: Emma Mesropian
 """
 
 import argparse
